@@ -1,1 +1,1 @@
-worker: gooddogs.py
+worker: python gooddogs.py
