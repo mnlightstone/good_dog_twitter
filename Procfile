@@ -1,1 +1,1 @@
-worker: python gooddogs.py
+web: gunicorn gooddogs:app
