@@ -53,8 +53,8 @@ def run_search(cursor):
                 print('Retweeted a tweet:', tweet.full_text[:50] + "...")
                 print(tweet.entities['media'][0]['media_url'], "\n")
 
-                # wait 2:00
-                sleep(120)
+                # wait 15:00
+                sleep(900)
                 count += 1
 
         except tweepy.TweepError as e:
@@ -87,7 +87,10 @@ if __name__ == '__main__':
 
             # make cursor with hashtags. tweet_mode argument includes 280char tweets
             tweepy_cursor = tweepy.Cursor(api.search,
-                                          q='#gooddog OR #cutedog OR #dogsoftwitter filter:media -filter:retweets',
+                                          q='#gooddog OR #cutedog OR #dogsoftwitter ' +
+                                            'filter:media ' +
+                                            '-filter:retweets ' +
+                                            'min_faves:200',
                                           tweet_mode='extended').items()
 
             # perform search and retweets
