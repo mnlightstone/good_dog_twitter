@@ -29,7 +29,7 @@ def setup():
 def run_search(cursor):
 
     # words in the author's name that we won't retweet
-    blacklist = ['designs', 'company', 'co', 'store', 'trainer', 'mr dad official', ]
+    blacklist = ['designs', 'company', 'co', 'store', 'trainer', 'business', 'mag']
 
     # counter to 100 so that we periodically get a new batch of tweets instead of running through
     # every tweet in the history of Good Dogs
